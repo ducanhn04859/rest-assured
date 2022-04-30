@@ -19,6 +19,7 @@ public class POSTMethod {
         request.header((new Header("Content-type","application/json; charset=UTF-8")));
 
         // Form up request body
+        // Using normal
 //        String postBody="{\n" +
 //                "  \"userId\": 1,\n" +
 //                "  \"id\": 1,\n" +
@@ -26,7 +27,7 @@ public class POSTMethod {
 //                "  \"body\": \"The request's body\"\n" +
 //                "}";
 
-        //using GSON
+        //Using GSON
         Gson gson = new Gson();
         POSTBody postBody = new POSTBody();
         postBody.setUserId(1);
@@ -46,7 +47,5 @@ public class POSTMethod {
         response.then().body("userId",equalTo(1));
         response.then().body("title",equalTo("REQUEST title GSON"));
         response.then().body("body",equalTo("The request's body GSON"));
-
-
     }
 }
