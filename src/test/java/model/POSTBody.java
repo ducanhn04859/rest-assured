@@ -3,10 +3,19 @@ package model;
 public class POSTBody {
 
     private int userId;
-    private String id;
+    private int id;
     private String title;
     private String body;
 
+    public POSTBody() {
+    }
+
+    public POSTBody(int userId, int id, String title, String body) {
+        this.userId = userId;
+        this.id = id;
+        this.title = title;
+        this.body = body;
+    }
 
     public int getUserId() {
         return userId;
@@ -16,11 +25,11 @@ public class POSTBody {
         this.userId = userId;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,5 +47,15 @@ public class POSTBody {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    @Override
+    public String toString() {
+        return "POSTBody{" +
+                "userId=" + userId +
+                ", id=" + id +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                '}';
     }
 }
