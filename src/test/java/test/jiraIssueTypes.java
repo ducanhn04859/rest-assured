@@ -28,8 +28,7 @@ public class jiraIssueTypes implements RequestCapability{
         RequestSpecification request = given();
         request.baseUri(baseUri);
         request.header(defaultHeader);
-        request.header("Authorization","Basic " +encodedCredStr);
-
+        request.header("Authorization", "Basic " + encodedCredStr);
 
         Response response = request.get(baseUri+path);
 
